@@ -16,7 +16,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <sa-token.version>1.36.0</sa-token.version>
+        <sa-token.version>1.38.0</sa-token.version>
     </properties>
 
     <dependencyManagement>
