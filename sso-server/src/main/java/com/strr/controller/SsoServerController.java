@@ -6,14 +6,16 @@ import cn.dev33.satoken.sso.config.SaSsoServerConfig;
 import cn.dev33.satoken.sso.processor.SaSsoServerProcessor;
 import cn.dev33.satoken.stp.StpUtil;
 import cn.dev33.satoken.util.SaResult;
-import com.dtflys.forest.Forest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class SsoServerController {
+    private final RestTemplate restTemplate = new RestTemplate();
+
     /**
      * SSO-Server端：处理所有SSO相关请求
      * 		http://{host}:{port}/sso/auth			-- 单点登录授权地址，接受参数：redirect=授权重定向地址
@@ -50,7 +52,7 @@ public class SsoServerController {
             try {
                 // 发起 http 请求
                 System.out.println("------ 发起请求：" + url);
-                String resStr = Forest.get(url).executeAsString();
+                String resStr = restTemplate.getForObject(url, String.class);
                 System.out.println("------ 请求结果：" + resStr);
                 return resStr;
             } catch (Exception e) {

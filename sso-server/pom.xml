@@ -20,7 +20,7 @@
         <!-- Sa-Token 权限认证, 在线文档：https://sa-token.cc/ -->
         <dependency>
             <groupId>cn.dev33</groupId>
-            <artifactId>sa-token-spring-boot-starter</artifactId>
+            <artifactId>sa-token-spring-boot3-starter</artifactId>
         </dependency>
 
         <!-- Sa-Token 插件：整合SSO -->
@@ -33,14 +33,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
-            <version>2.5.14</version>
-        </dependency>
-
-        <!-- Http请求工具（在模式三的单点注销功能下用到，如不需要可以注释掉） -->
-        <dependency>
-            <groupId>com.dtflys.forest</groupId>
-            <artifactId>forest-spring-boot-starter</artifactId>
-            <version>1.5.26</version>
         </dependency>
     </dependencies>
 </project>
